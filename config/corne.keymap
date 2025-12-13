@@ -72,8 +72,8 @@
             // -----------------------------------------------------------------------------------------
             // |  TAB |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U   |  I  |  O  |  P  | BSPC |
             // | SHFT |  A  |  S  |  D  |  F  |  G  |   |  H  |  J   |  K  |  L  |  ;  | ENTR |
-            // | CTRL |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M   | </, | >/. |  /? | ESC  |
-            //                    | GUI | L2  | CMD |   | L1  | SPC  |  L3 |
+            // | OPT  |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M   | </, | >/. |  /? | ESC  |
+            //                    | CMD | L2  | CTRL|   | L1  | SPC  |  L3 |
 
             bindings = <
 &kp TAB         &kp Q  &kp W  &kp E     &kp R         &kp T          &kp Y      &kp U      &kp I          &kp O          &kp P          &kp BSPC
@@ -85,46 +85,46 @@
 
         lower_layer {
             // -----------------------------------------------------------------------------------------
-            // | SYSR |  1  |  2  |  3  |  4  |  5  |   |  6  |  7  |  8  |  9  |  0  |      |
-            // |      |     |     | UP  |     |     |   |     |     |     |     |     |      |
-            // |      |     | LFT | DWN | RGT |     |   |     |     |     |     |     |      |
-            //                    |     |     | SPC |   | SPC |     |     |
+            // | TAB  |  1  |  2  |  3  |  4  |  5  |   |  6  |  7  |  8  |  9  |  0  | BSPC |
+            // | SHFT |     |     | UP  |     |     |   |     |     |     |     |     |      |
+            // | OPT  |     | LFT | DWN | RGT |     |   |     |     |     |     |     |      |
+            //                    |     | SPC |     |   |     | SPC |     |
 
             bindings = <
-&sys_reset      &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_4  &kp NUMBER_5    &kp NUMBER_6  &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp NUMBER_0  &trans
-&trans          &trans        &trans        &kp UP        &trans        &trans          &trans        &trans        &trans        &trans        &trans        &trans
-&trans          &trans        &kp LEFT      &kp DOWN      &kp RIGHT     &trans          &trans        &trans        &trans        &trans        &trans        &trans
-                              &trans        &kp SPACE     &trans                        &trans        &kp SPACE     &trans
+&kp TAB          &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_4  &kp NUMBER_5    &kp NUMBER_6  &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp NUMBER_0  &kp BSPC
+&kp LEFT_SHIFT   &trans        &trans        &kp UP        &trans        &trans          &trans        &trans        &trans        &trans        &trans        &trans
+&kp LEFT_ALT     &trans        &kp LEFT      &kp DOWN      &kp RIGHT     &trans          &trans        &trans        &trans        &trans        &trans        &trans
+                               &trans        &kp SPACE     &trans                        &trans        &kp SPACE     &trans
             >;
         };
 
         raise_layer {
             // -----------------------------------------------------------------------------------------
-            // |  TAB |  !  |  @  |  #  |  &  |  %  |   |  ^  |  $  |  *  |  (  |  )  | BSPC |
-            // | CTRL |  '  |  "  |     |  -  |  [  |   |  ]  |  =  |     |     |  \  |  `   |
-            // | SHFT |  ~  |     |     |  _  |  {  |   |  }  |  +  |     |     | "|" |      |
-            //                    | GUI |     | SPC |   | SPC |     | ALT |
+            // | TAB  |  ~  |     |     |     |     |   |     |     |     |     |     | BSPC |
+            // | SHFT |  `  |     |     |  -  |  [  |   |  ]  |  =  |  '  |  "  |  \  |      |
+            // | OPT  |     |     |     |  _  |  {  |   |  }  |  +  |     |     | "|" |      |
+            //                    | CMD |     |     |   |     | SPC |     |
 
             bindings = <
-&kp TAB    &kp EXCL   &kp AT    &kp HASH   &kp AMPERSAND  &kp PRCNT           &kp CARET  &kp DOLLAR  &kp ASTRK  &kp LPAR  &kp RPAR  &kp BSPC
-&kp LCTRL  &trans     &trans    &trans     &kp MINUS      &kp LBKT            &kp RBKT   &kp EQUAL   &kp SQT    &kp DQT   &kp BSLH  &kp GRAVE
-&kp LSHFT  &kp TILDE  &trans    &trans     &kp UNDER      &kp LBRC            &kp RBRC   &kp PLUS    &trans     &trans    &kp PIPE  &trans    
-                                &kp LGUI   &kp SPACE      &trans              &trans     &kp SPACE   &trans
+&kp TAB             &kp TILDE  &trans    &trans     &trans         &trans              &trans     &trans      &trans     &trans    &trans    &kp BSPC
+&kp LEFT_SHIFT      &kp GRAVE  &trans    &trans     &kp MINUS      &kp LBKT            &kp RBKT   &kp EQUAL   &kp SQT    &kp DQT   &kp BSLH  &trans
+&kp LEFT_ALT        &trans     &trans    &trans     &kp UNDER      &kp LBRC            &kp RBRC   &kp PLUS    &trans     &trans    &kp PIPE  &trans    
+                               &kp LGUI  &trans     &trans         &trans              &kp SPACE  &trans
             >;
         };
 
         media_layer {
             // -----------------------------------------------------------------------------------------
-            // |      | BT1 | BT2 | BT3 |     |     |   |PSCRN|     |     |     |     |BTCLR |
-            // |      |PLAY |PREV |NEXT |MUTE |V_DWN|   |V_UP |     |     |     |     |      |
+            // | SYSR | BT1 | BT2 | BT3 |     |     |   |     |     |     |     |     | BTCLR|
+            // | BOOT |PLAY |PREV |NEXT |MUTE |V_DWN|   |V_UP |     |     |     |     |      |
             // |      |     |     |     |     |     |   |     |     |     |     |     |      |
             //                    |     |     |     |   |     |     |     |
 
             bindings = <
-&trans  &bt BT_SEL 0      &bt BT_SEL 1      &bt BT_SEL 2     &trans             &trans             &kp PSCRN        &trans  &trans  &trans  &trans  &bt BT_CLR
-&trans  &kp C_PLAY_PAUSE  &kp C_PREV        &kp C_NEXT       &kp C_MUTE         &kp C_VOLUME_DOWN  &kp C_VOLUME_UP  &trans  &trans  &trans  &trans  &trans
-&trans  &trans            &trans            &trans           &trans             &trans             &trans           &trans  &trans  &trans  &trans  &trans
-                                       &trans           &trans  &trans    &trans  &trans  &trans
+&sys_reset   &bt BT_SEL 0      &bt BT_SEL 1      &bt BT_SEL 2     &trans             &trans             &trans           &trans  &trans  &trans  &trans  &bt BT_CLR
+&bootloader  &kp C_PLAY_PAUSE  &kp C_PREV        &kp C_NEXT       &kp C_MUTE         &kp C_VOLUME_DOWN  &kp C_VOLUME_UP  &trans  &trans  &trans  &trans  &trans
+&trans       &trans            &trans            &trans           &trans             &trans             &trans           &trans  &trans  &trans  &trans  &trans
+                               &trans            &trans           &trans             &trans             &trans           &trans
             >;
         };
     };
